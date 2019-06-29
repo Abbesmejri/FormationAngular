@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Dashboard</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/ajout">Ajouter</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/gestion">Gestion</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/poc">Exercices</a>
+      </li>
+      <select #langSelect (change)="translate.use(langSelect.value)">
+          <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+        </select>
+
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+        <a class="nav-link" routerLink="/connexion/">Login</a>
+        <a class="nav-link" routerLink="/connexion/inscription/">Inscription</a>
+    </form>
+  </div>
+</nav>

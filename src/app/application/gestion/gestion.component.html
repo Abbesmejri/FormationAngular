@@ -1,0 +1,23 @@
+<h1>Add product</h1>
+<div class="form-group">
+  <label>Title:</label>
+  <input class="form-control" [(ngModel)]=produit.title>
+</div>
+<div class="form-group">
+  <label>Description:</label>
+  <textarea class="form-control" [(ngModel)]=produit.description></textarea>
+</div>
+<div class="form-group">
+  <label>Price:</label>
+  <input class="form-control" [(ngModel)]=produit.price>
+</div>
+<div class="form-group">
+  <label>Product type:</label>
+  <select class="form-control" [(ngModel)]=produit.product_type>
+    <option value="cosmotique">Cosmotique</option>
+    <option value="vestimentaire">Vestimentaire</option>
+    <option value="alimentaire">Alimentaire</option>
+  </select>
+</div>
+<button class="btn btn-success" *ngIf = "idProduit==undefiened"(click)='save()'>Save</button>
+<button class="btn btn-success" *ngIf = "idProduit!=undefiened"(click)='update()'>Update</button>

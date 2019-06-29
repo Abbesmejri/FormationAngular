@@ -1,0 +1,54 @@
+<div class="form-group">
+  <label>Name:</label>
+  <input class="form-control" value="{{imageUrl}}">
+</div>
+<img src="{{imageUrl}}" width="50px">
+
+<button class="btn btn-success" disabled="{{state}}">Click!!!</button>
+<button class="btn btn-success" (click)="clickEvent()">Click event!!!</button>
+<hr>
+<button class="btn btn-success" (click)="increment()">+</button>
+{{count}}
+<button class="btn btn-danger" (click)="decrement()">-</button>
+<hr>
+<div class="form-group">
+    <label>ngModel:</label>
+    <input class="form-control" [(ngModel)]="message">
+  </div>
+  <button class="btn btn-success" (click)="display()">Message</button>
+  <br>
+  <div class="form-group">
+    <label>Nom</label>
+    <input class="form-control" [(ngModel)]="nom">
+  </div>
+  <div class="form-group">
+    <label>Email</label>
+    <input class="form-control" [(ngModel)]="email">
+  </div>
+  <div class="form-group" *ngIf="nom == 'jamel'">
+    <label>Phone</label>
+    <input class="form-control" [(ngModel)]="phone">
+  </div>
+  <div class="form-group">
+    <label>About</label>
+    <textarea class="form-control" [(ngModel)]="about"></textarea>
+  </div>
+  <button class="btn btn-success" (click)="save()">Save</button>
+<hr>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name<input class="form-control" [(ngModel)]="item"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let h of HEROES|search:item" [ngClass]="{red:h.id == 1,yellow:h.id==4,black:h.id==2}">
+      <td>{{h.id}}</td>
+      <td>{{h.name}}</td>
+    </tr>
+  </tbody>
+</table>
+{{date|date:'M/d/yy'}}
+
+{{date|date:'MMMM d, y, h:mm:ss a z'}}

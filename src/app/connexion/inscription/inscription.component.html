@@ -1,0 +1,47 @@
+<div class="section section-signup"
+  style="background-image: url('https://www.tryfleet.com/hubfs/shutterstock_448411279.jpg'); background-size: cover; background-position: top center; min-height: 700px;">
+  <div class="container">
+    <div class="row">
+      <div class="card card-signup" data-background-color="orange">
+        <form class="form" [formGroup]="myform">
+          <div class="card-header text-center">
+            <h3 class="card-title title-up">Sign Up</h3>
+          </div>
+          <div class="card-body">
+              <span class="description" *ngIf="myform.controls.name.invalid && (myform.controls.name.touched || myform.controls.name.dirty)">Name invalid</span>
+
+            <div class="input-group no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="now-ui-icons users_circle-08"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" formControlName="name" placeholder="First Name...">
+            </div>
+            <span class="description" *ngIf="myform.controls.password.invalid && (myform.controls.password.touched || myform.controls.password.dirty)">password invalid</span>
+            <div class="input-group no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="now-ui-icons text_caps-small"></i>
+                </span>
+              </div>
+              <input type="text" placeholder="Password..." formControlName="password" class="form-control">
+            </div>
+            <span class="description" *ngIf="myform.controls.email.invalid && (myform.controls.email.touched || myform.controls.email.dirty)">email invalid</span>
+            <div class="input-group no-border">
+              <div class="input-group-prepend">
+                <span class="input-group-text">
+                  <i class="now-ui-icons ui-1_email-85"></i>
+                </span>
+              </div>
+              <input type="text" class="form-control" placeholder="Email..." formControlName="email">
+            </div>
+          </div>
+          <div class="card-footer text-center">
+            <button [disabled]="myform.invalid" class="btn btn-neutral btn-round btn-lg" (click) ="getstarted()">Get Started</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

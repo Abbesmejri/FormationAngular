@@ -1,0 +1,25 @@
+<h2>{{'HELLO'|translate}}</h2>
+<h1>Product List</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>$$$</th>
+      <th>Status</th>
+      <th>Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+    <tbody>
+      <tr *ngFor="let produit of produits">
+        <td>{{produit.title}}</td>
+        <td>{{produit.description}}</td>
+        <td>{{produit.price}}</td>
+        <td>{{produit.status}}</td>
+        <td>{{produit.entry_date}}</td>
+        <td><button class="btn btn-success" (click)="gestion(produit._id)">Edit</button>
+        <button class="btn btn-danger" (click)="delete(produit._id)">Delete</button></td>
+      </tr>
+    </tbody>
+</table>
